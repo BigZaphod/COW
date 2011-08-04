@@ -1,75 +1,328 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
+<head><title>COW - Programming for Bovines</title></head>
+<body bgcolor="white" alink="red" vlink="blue" link="blue">
 
-  <title>BigZaphod/COW @ GitHub</title>
+<a href="http://github.com/BigZaphod/COW"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #3b381e;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #c4c7e1; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #c4c7e1; }
-    h3 { text-align: center; color: #c4c7e1; }
-    a { color: #c4c7e1; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+<small><font face="Arial"><b>Other Languages:</b>
+<b>COW</b> | <a href="/Whirl/">Whirl</a> | <a href="/3code/">3code</a> | <a href="/Taxi/">Taxi</a></font></small>
 
-<body>
-  <a href="http://github.com/BigZaphod/COW"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<p align="center" style="margin: 0px 0px 20px 0px; padding: 0px; font-family: arial; font-size: 30pt;">
+<img src="cowprogramming-logo.png" alt="COW" height="310" />
+</p>
 
-  <div id="container">
+<div style="border: 1px solid green; padding: 5px;">
+<b>Important news!</b>
+<ul>
+<li style="padding-bottom:15px;">Fun logo thanks to Jay Campbell!</li>
 
-    <div class="download">
-      <a href="http://github.com/BigZaphod/COW/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/BigZaphod/COW/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+<li>
+Alex van Oostenrijk and Martijn van Beek have written a paper which analyzes the semantics of COW.
+The study is available in both <a href="semantics-cow-dutch.pdf">Dutch</a> and
+<a href="semantics-cow-english.pdf">English</a>.  They show a proof that COW is Turing-complete.
+Check it out today!
+</li>
+</ul>
+</div>
 
-    <h1><a href="http://github.com/BigZaphod/COW">COW</a>
-      <span class="small">by <a href="http://github.com/BigZaphod">BigZaphod</a></span></h1>
+<p>
+<b><i><small>Note: If you like COW, you may also enjoy my other languages, check out the links at the top of this page!</b></I></small>
+</p>
 
-    <div class="description">
-      The COW Programming Language
-    </div>
+<p>
+The COW programming language was designed with the bovine in mind. Given that cows have 
+ somewhat limited vocabulary skills, it seemed natural to incorporate only the words they
+ know into the language.  As a result, all instructions are some variation on "moo" which
+ just so happens to be the only word they really understand.
+</p>
+<p>
+Any other word or symbol that isn't an instruction is ignored entirely.  So, spaces can
+ be used or not.  Newlines can be used or not.  You get the idea.  It makes commenting
+ COW programs rather easy as long as you don't use any words that have an instruction
+ embedded in it.  <b>All instructions are case-sensitive.</b>
+</p>
 
-    <h2>Contact</h2>
-<p>Sean Heber (sean@fifthace.com)<br/>      </p>
+The commands are as follows:
+<br><br>
+<table width="100%" border="0" cellpadding="4">
+<tr>
+<td bgcolor="black" nowrap><font color="white">Code</font></td>
+<td bgcolor="black" nowrap><font color="white">Instruction</font></td>
+<td bgcolor="black" width="100%"><font color="white">Description</font></td>
+</tr>
 
+<tr valign="top">
+<td>0</td>
+<td>moo</td>
+<td>This command is connected to the MOO command.  When encountered during normal execution,
+ it searches the program code in reverse looking for a matching MOO command and begins
+ executing again starting from the found MOO command.  When searching, it skips the instruction
+ that is immediately before it (see MOO).</td>
+</tr>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/BigZaphod/COW/zipball/master">zip</a> or
-      <a href="http://github.com/BigZaphod/COW/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/BigZaphod/COW</pre>
-    </p>
+<tr valign="top">
+<td>1</td>
+<td>mOo</td>
+<td>Moves current memory position back one block.</td>
+</tr>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/BigZaphod/COW">BigZaphod/COW</a>
-    </div>
+<tr valign="top">
+<td>2</td>
+<td>moO</td>
+<td>Moves current memory position forward one block.</td>
+</tr>
 
-  </div>
+<tr valign="top">
+<td>3</td>
+<td>mOO</td>
+<td>Execute value in current memory block as if it were an instruction.  The command executed is based on the
+ instruction code value (for example, if the current memory block contains a 2, then the moO command is executed).
+ An invalid command exits the running program.  Value 3 is invalid as it would cause an infinite loop.</td>
+</tr>
 
-  
+<tr valign="top">
+<td>4</td>
+<td>Moo</td>
+<td>If current memory block has a 0 in it, read a single ASCII character from STDIN and store it in the
+ current memory block.  If the current memory block is not 0, then print the ASCII character that corresponds
+ to the value in the current memory block to STDOUT.</td>
+</tr>
+
+<tr valign="top">
+<td>5</td>
+<td>MOo</td>
+<td>Decrement current memory block value by 1.</td>
+</tr>
+
+<tr valign="top">
+<td>6</td>
+<td>MoO</td>
+<td>Increment current memory block value by 1.</td>
+</tr>
+
+<tr valign="top">
+<td>7</td>
+<td>MOO</td>
+<td>If current memory block value is 0, skip next command and resume execution <b>after</b> the next matching moo command.
+ If current memory block value is not 0, then continue with next command. <b>Note that the fact that it skips the
+ command immediately following it has interesting ramifications for where the matching moo command really
+ is.  For example, the following will match the second and not the first moo:  OOO MOO moo moo</b></td>
+</tr>
+
+<tr valign="top">
+<td>8</td>
+<td>OOO</td>
+<td>Set current memory block value to 0.</td>
+</tr>
+
+<tr valign="top">
+<td>9</td>
+<td>MMM</td>
+<td>If no current value in register, copy current memory block value.  If there is a value in the register,
+ then paste that value into the current memory block and clear the register.</td>
+</tr>
+
+<tr valign="top">
+<td>10</td>
+<td>OOM</td>
+<td>Print value of current memory block to STDOUT as an integer.</td>
+</tr>
+
+<tr valign="top">
+<td>11</td>
+<td>oom</td>
+<td>Read an integer from STDIN and put it into the current memory block.</td>
+</tr>
+
+</table>
+
+<br><br>
+
+<center><font size="+1" face="Arial"><I>Sample Code</I></font>
+<br><br>
+
+<b>quick exit</b>
+<pre>
+OOO
+MOo
+mOO
+</pre>
+
+<br><br>
+<b>simple loop using current memory block as a counter</b>
+<pre>
+MOO
+MOo
+[[ anything in here happens "current" number of times ]]
+moo
+</pre>
+
+<br><br>
+<b>copy current value to next memory block</b>
+<pre>
+MMM
+moO
+MMM
+</pre>
+
+<br><br>
+<b>loop "current" number of times without affecting current's value</b>
+<pre>
+MMM
+moO
+MMM
+MOO
+MOo
+[[ move back so original current is current again ]]
+mOo
+[[ loop here ]]
+[[ move forward so the loop continutes to work on the temp counter ]]
+moO
+moo
+</pre>
+
+<br><br>
+<b>test if current is 3 without affecting current's value</b>
+<pre>
+[[ copy current to temp block ]]
+MMM
+moO
+MMM
+[[ copy 3 into another new temp block ]]
+moO
+OOO
+MoO
+MoO
+MoO
+[[ loop 3 times (the 3 is still current) ]]
+[[  this also decrements the temp value ]]
+MOO
+MOo
+mOo
+MOo
+moO
+moo
+[[ move back to first temp value (the copy of the current value) and check if 0 ]]
+mOo
+MOO
+[[ make original current current again ]]
+mOo
+OOM
+[[ gets here if != 3 ]]
+[[ skip down to the bottom past the if ]]
+moO
+OOO
+MOO
+moo
+[[ make original current current again ]]
+mOo
+OOM
+[[ gets here if == 3 ]]
+[[ skip down to the bottom of the if ]]
+moO
+OOO
+MOO
+moo
+moo
+[[ set current back ]]
+mOo
+[[ all execution resumes here ]]
+</pre>
+
+<br><br>
+<b>generate fibonacci sequence</b>
+<pre>
+MoO
+moO
+MoO
+mOo
+[[ main loop ]]
+MOO
+[[ print first number ]]
+OOM
+[[ temp copy of first number ]]
+MMM
+moO
+moO
+MMM
+mOo
+mOo
+[[ store second number off in the first position now ]]
+moO
+MMM
+mOo
+MMM
+[[ move back to temp number ]]
+moO
+moO
+[[ use temp to add to first and store in second in loop ]]
+MOO
+MOo
+mOo
+MoO
+moO
+moo
+mOo
+mOo
+moo
+</pre>
+
+<br><br>
+<b>SOURCE</b><br><br>
+Now that you're all pumped up to get your neighborhood cows in on the action,
+ you can download and compile the C++ <a href="http://github.com/BigZaphod/COW/tree/master/source/cow.cpp">interpreter source</a> or
+ my new <a href="http://github.com/BigZaphod/COW/tree/master/source/cowcomp.cpp">compiler</a> that generates a C++ version of the COW
+ source.  Enjoy!
+<br><br>
+Forget how many bottles of beer you had on the wall?  <a href="http://www.slarty.org">Slarty</a>
+ has contributed a <a href="http://github.com/BigZaphod/COW/tree/master/examples/99.cow">program to help</a>.  Enjoy.
+<br><br>
+<a href="http://github.com/BigZaphod/COW/tree/master/source/cow.k">Here is a COW interpreter</a> written in the
+ <a href="http://www.kuro5hin.org/story/2002/11/14/22741/791">K Programming Language</a> by
+ <a href="http://www.kuro5hin.org/user/jjayson">jjayson</a>.  Cool!
+<br><br>
+<b>NOTICE:</b> Bovine Programming Reseach has contributed a revolutionary new extension to COW
+ they are calling Distributed Digestion eXtentions (DDX).  This enhancement allows bovines everywhere
+ to better utilize the hardware they were born with.  Read more about DDX <a href="http://github.com/BigZaphod/COW/tree/master/ddx/ddx.txt">here</a>.
+ Grab the <a href="http://github.com/BigZaphod/COW/tree/master/ddx/cow.cpp">code</a> and increase your productivity today!  BPR also provided two
+ sample DDX applications to get you started:  <a href="http://github.com/BigZaphod/COW/tree/master/ddx/fib-ddx.cow">Fibonacci numbers with DDX</a> and 
+ <a href="http://github.com/BigZaphod/COW/tree/master/ddx/pow7-ddx.cow">Powers of 7</a>.  Thanks BPR!
+<br><br>
+Frank Buss implemented <a href="http://www.frank-buss.de/cow.html">COW in Javascript</a>. Check it out if that's your language of choice. (I'm a fan, myself.)
+
+<br><br>
+<b>History</b><br><br>
+Although I don't quite remember for sure, I believe COW was released sometime in early 2003.
+
+<br><br><br>
+<table border="0">
+<tr>
+<td align="left" nowrap>
+<pre>
+                                       /;    ;\
+                                   __  \\____//
+                                  /{_\_/   `'\____
+                                  \___  (o)  (o  }
+       _____________________________/         :--'   
+   ,-,'`@@@@@@@@        @@@@@@         \_     `__\
+  ;:(  @@@@@@@@@         @@@              \___(o'o)
+  :: )  @@@@           @@@@@@        ,'@@(  `===='    Moo!
+  :: : @@@@@:           @@@@         `@@@:
+  :: \  @@@@@:        @@@@@@@)    (  '@@@'
+  ;; /\      /`,    @@@@@@@@@\    :@@@@@)
+  ::/  )    {_----------------:  :~`,~~;
+ ;;'`; :   )                   :  / `; ;
+;;;; : :   ;                   :  ;  ; :
+`'`' / :  :                    :  :  : :
+    )_ \__;      ";"           :_ ;  \_\        `,','
+    :__\  \    * `,'*          \  \  :  \   *   8`;'*  *
+ ` ` `  `^' ` ` \ :/ ` ` ` ` `  `^'  `-^-' ` \v/ `:  \/
+</pre>
+</td>
+</tr>
+</table>
+
+</center>
+
 </body>
 </html>
