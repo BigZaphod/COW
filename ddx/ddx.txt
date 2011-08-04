@@ -1,0 +1,43 @@
+Distributed Digestion eXtentions (DDX)
+
+(Madison, Wisconsin) We at Bovine Programming Reseach are committed to
+providing the most power, synergistic technologies possible to make
+software development easy for all cows and bulls. We are pleased to
+annouce the first release of the powerful DDX technology. Now, a bovine
+may simultaneously work on seven pieces of data at once. This increase
+in power comes from the addition of just eight new instructions and is
+fully backwards compatible with all existing source code. The legacy
+code will all operate in the first stomach and never know that there are
+six additional stomaches unused. This black-box ability provides a
+simple upgrade path that we are sure will help your project grow.
+
+  12 MMm : Switch to previous stomach (if in the first stomach, move to last)
+
+  13 MmM : Switch to next stomach (if in the last stomach, move to first)
+
+  14 Oom : Move memory position back one block in all stomachs
+
+  15 oOm : Move memory position forward one block in all stomachs
+
+  16 OoM : Decrement memory value by 1 for current position in all stomachs
+
+  17 oOM : Increment memory value by 1 for current position in all stomachs
+
+  18 ooo : Set memory value to 0 for current position in all stomachs
+
+  19 mmm : If no value currently in register, sum memory at positions in all
+           stomachs and load into register, else if value in register write
+           it to all stomachs in the way specified: If the memory blocks
+           in all positions are zero, set the current blocks to the register
+           value, but if there are non-zero values at the positions, then add
+           them all together and call that the weighting. The register is
+           divided by that weighting, rounded down to the nearest integer,
+           call this the base. Then the remainer is calculated. Each memory
+           block is written as the base times its current value. A number
+           less than 0 gets its absolute value times the remained. For
+           example, if the current stomach values are "1 2 3 4 5 0 -2" and
+           the register has 8976, then the results would be 598 1196 1794
+           2392 2990 0 12. This single operation provides addition, division,
+           and mulitplication.
+
+

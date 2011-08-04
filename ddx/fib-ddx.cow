@@ -1,0 +1,7 @@
+[*** Fibonacci numbers using DDX ***]
+
+[*** Setup the first two stomachs with 1s and stay in 2nd stomach ***]
+MoO OOM MmM MoO OOM
+
+[*** add together, zero prev stomach, write to next stomach, print ***]
+MOO mmm MMm OOO MmM MmM MMM OOM moo
