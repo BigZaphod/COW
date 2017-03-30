@@ -7,6 +7,8 @@
 //--------------------------------------------
 #include <vector>
 #include <stdio.h>
+#include <cstdlib>
+#include <cstring>
 
 typedef std::vector<int> mem_t;
 mem_t program;
