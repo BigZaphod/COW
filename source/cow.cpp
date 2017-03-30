@@ -7,6 +7,8 @@
 //--------------------------------------------
 #include <vector>
 #include <stdio.h>
+#include <cstdlib>
+#include <cstring>
 
 typedef std::vector<int> mem_t;
 mem_t program;
@@ -25,7 +27,9 @@ void quit( bool error )
         exit(1);
     }
     
+#ifndef NO_GREETINGS
     printf( "\nDone.\n" );
+#endif
     exit(0);
 }
 
@@ -258,7 +262,9 @@ int main( int argc, char** argv )
 
 	fclose( f );
 
+#ifndef NO_GREETINGS
 	printf( "Welcome to COW!\n\nExecuting [%s]...\n\n", argv[1] );
+#endif
 
     // init main memory.
     memory.push_back( 0 );
