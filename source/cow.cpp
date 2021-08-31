@@ -99,7 +99,7 @@ bool exec( int instruction )
         else
         {
             (*mem_pos) = getchar();
-            while( getchar() != '\n' );
+        //     while( getchar() != '\n' );
         }
         break;
     
@@ -166,26 +166,31 @@ bool exec( int instruction )
     
     // oom
     case 11:
-        {
-            char buf[100];
-            int c = 0;
-            while( c < sizeof(buf)-1 )
-            {
-                buf[c] = getchar();
-                c++;
-                buf[c] = 0;
-                
-                if( buf[c-1] == '\n' )
-                    break;
-            }
-            // swallow, just in case.
-            if( c == sizeof(buf) )
-                while( getchar() != '\n' );
-            
-            (*mem_pos) = atoi( buf );
+        char buf[1];
+        buf[0] = getchar();
 
-            break;
-        }
+        (*mem_pos) = atoi( buf );
+        break;
+        // {
+        //     char buf[100];
+        //     int c = 0;
+        //     while( c < sizeof(buf)-1 )
+        //     {
+        //         buf[c] = getchar();
+        //         c++;
+        //         buf[c] = 0;
+                
+        //         if( buf[c-1] == '\n' )
+        //             break;
+        //     }
+        //     // swallow, just in case.
+        //     if( c == sizeof(buf) )
+        //         while( getchar() != '\n' );
+            
+        //     (*mem_pos) = atoi( buf );
+
+        //     break;
+        // }
 
     // bad stuff
     default:
@@ -279,5 +284,3 @@ int main( int argc, char** argv )
 
 	return 0;
 }
-
-
