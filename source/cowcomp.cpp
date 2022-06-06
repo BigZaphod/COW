@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include <cstring>
+
 
 #define COMPILER	"g++"
 #define FLAGS		"-O3 -x c++"
